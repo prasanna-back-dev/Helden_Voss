@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Halden & Voss Family Law</title>
+  <meta name="description" content="Learn about our approach to family law — low-conflict, client-first, focused on what matters most.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #faf8f5;
+      --surface: #ffffff;
+      --text: #3d3833;
+      --text-light: #6b6560;
+      --muted: #9c958e;
+      --border: #ebe7e2;
+      --accent: #b8856c;
+      --font-display: 'Fraunces', Georgia, serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 18px; }
+    body { font-family: var(--font-body); font-weight: 400; line-height: 1.75; color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; }
+
+    .t-display { font-family: var(--font-display); font-weight: 300; font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; letter-spacing: -0.03em; }
+    .t-display em { font-style: italic; font-weight: 400; }
+    .t-lead { font-size: 1.15rem; line-height: 1.8; color: var(--text-light); font-weight: 300; }
+    .t-label { font-family: var(--font-body); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+    .t-quote { font-family: var(--font-display); font-weight: 300; font-style: italic; font-size: clamp(1.5rem, 3vw, 2.25rem); line-height: 1.5; letter-spacing: -0.02em; }
+
+    .page { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+    .spacer-sm { height: 80px; }
+    .spacer-md { height: 140px; }
+    .spacer-lg { height: 200px; }
+
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250, 248, 245, 0.85); backdrop-filter: blur(20px); }
+    .nav-inner { max-width: 720px; margin: 0 auto; padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: var(--font-display); font-size: 1rem; font-weight: 400; color: var(--text); }
+    .nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
+    .nav-links a { font-size: 0.8rem; font-weight: 400; color: var(--muted); text-decoration: none; transition: color 0.3s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta { color: var(--accent) !important; font-weight: 500; }
+    .nav-mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+    .nav-mobile-toggle span { display: block; width: 18px; height: 1px; background: var(--text); margin: 5px 0; }
+
+    .opening { padding-top: 160px; padding-bottom: 80px; }
+    .opening .t-label { display: block; margin-bottom: 40px; }
+    .opening h1 { margin-bottom: 32px; }
+    .opening p { max-width: 520px; }
+
+    .story { border-top: 1px solid var(--border); padding-top: 120px; }
+    .story .t-label { display: block; margin-bottom: 48px; }
+    .story h2 { font-family: var(--font-display); font-weight: 300; font-size: clamp(1.75rem, 4vw, 2.75rem); line-height: 1.2; letter-spacing: -0.025em; margin-bottom: 32px; }
+    .story p { color: var(--text-light); font-weight: 300; max-width: 520px; margin-bottom: 24px; }
+
+    .bio { border-top: 1px solid var(--border); padding-top: 120px; }
+    .bio .t-label { display: block; margin-bottom: 48px; }
+    .bio h2 { font-family: var(--font-display); font-weight: 300; font-size: clamp(1.75rem, 4vw, 2.75rem); line-height: 1.2; letter-spacing: -0.025em; margin-bottom: 12px; }
+    .bio .title { color: var(--muted); font-size: 0.95rem; margin-bottom: 40px; }
+    .bio p { color: var(--text-light); font-weight: 300; max-width: 520px; margin-bottom: 24px; }
+    .bio ul { list-style: none; margin-top: 48px; padding-top: 48px; border-top: 1px solid var(--border); }
+    .bio li { padding: 12px 0; color: var(--text-light); font-weight: 300; font-size: 0.95rem; }
+    .bio li::before { content: '— '; color: var(--accent); }
+
+    .approach { border-top: 1px solid var(--border); padding-top: 120px; }
+    .approach .t-label { display: block; margin-bottom: 48px; }
+    .approach-item { padding: 64px 0; border-bottom: 1px solid var(--border); }
+    .approach-item:first-of-type { border-top: 1px solid var(--border); }
+    .approach-number { font-family: var(--font-display); font-size: 0.85rem; color: var(--accent); margin-bottom: 20px; font-style: italic; }
+    .approach-item h3 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.25rem, 2.5vw, 1.75rem); margin-bottom: 12px; letter-spacing: -0.02em; }
+    .approach-item p { color: var(--text-light); font-weight: 300; font-size: 0.95rem; max-width: 480px; }
+
+    .closing { text-align: center; padding-top: 160px; padding-bottom: 160px; }
+    .closing h2 { font-family: var(--font-display); font-weight: 300; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.2; letter-spacing: -0.025em; margin-bottom: 32px; }
+    .closing p { color: var(--text-light); font-weight: 300; margin: 0 auto 48px; max-width: 440px; }
+    .btn { display: inline-block; font-family: var(--font-body); font-size: 0.85rem; font-weight: 500; color: var(--accent); text-decoration: none; padding: 16px 0; border-bottom: 1px solid var(--accent); transition: all 0.3s; letter-spacing: 0.02em; }
+    .btn:hover { color: var(--text); border-color: var(--text); }
+
+    .footer { padding: 80px 0; text-align: center; border-top: 1px solid var(--border); }
+    .footer p { font-size: 0.75rem; color: var(--muted); font-weight: 300; }
+
+    @media (max-width: 768px) {
+      html { font-size: 17px; }
+      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(250, 248, 245, 0.98); backdrop-filter: blur(20px); flex-direction: column; padding: 32px 24px; gap: 24px; border-bottom: 1px solid var(--border); }
+      .nav-links.active { display: flex; }
+      .nav-mobile-toggle { display: block; }
+      .spacer-sm { height: 60px; }
+      .spacer-md { height: 100px; }
+      .spacer-lg { height: 140px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Halden & Voss</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html" class="nav-cta">Get in touch</a></li>
+      </ul>
+      <button class="nav-mobile-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="opening" data-od-id="opening">
+    <div class="page">
+      <span class="t-label">About our firm</span>
+      <h1 class="t-display">Built on a different idea.</h1>
+      <p class="t-lead">That families going through hard times deserve better than aggressive, conflict-driven legal representation.</p>
+    </div>
+  </section>
+
+  <section class="story" data-od-id="story">
+    <div class="page">
+      <span class="t-label">Our story</span>
+      <h2>From courtroom battles to conversation</h2>
+      <p>Priya Halden spent over a decade at traditional family law firms before realizing that the adversarial approach often caused more harm than good. She saw how unnecessary conflict drained families emotionally and financially.</p>
+      <p>In 2018, she founded Halden & Voss with a different vision — a boutique firm that combines deep legal expertise with genuine compassion, prioritizing low-conflict solutions that protect both relationships and futures.</p>
+      <p>Today, the firm serves families across the Denver metro area, helping them navigate divorce, custody, and estate planning with dignity and respect.</p>
+    </div>
+  </section>
+
+  <section class="bio" data-od-id="bio">
+    <div class="page">
+      <span class="t-label">Founder</span>
+      <h2>Priya Halden</h2>
+      <div class="title">Esq. — Managing Attorney</div>
+      <p>Priya is a Colorado-native with a passion for helping families navigate the legal system with dignity. She earned her J.D. from the University of Colorado Law School and has practiced family law for over 15 years.</p>
+      <p>Her approach combines thorough legal knowledge with emotional intelligence, helping clients understand their options and make informed decisions during difficult times.</p>
+      <ul>
+        <li>J.D., University of Colorado Law School</li>
+        <li>Colorado Bar Association, Family Law Section</li>
+        <li>Collaborative Law Professionals of Colorado</li>
+        <li>Volunteer Attorney, Colorado Legal Services</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="approach" data-od-id="approach">
+    <div class="page">
+      <span class="t-label">Our approach</span>
+
+      <div class="approach-item">
+        <div class="approach-number">i.</div>
+        <h3>We listen first</h3>
+        <p>Before we talk about strategy, we listen. Understanding your situation, your concerns, and your goals is the foundation of everything we do.</p>
+      </div>
+
+      <div class="approach-item">
+        <div class="approach-number">ii.</div>
+        <h3>We explain everything</h3>
+        <p>No legal jargon. No surprises. We make sure you understand every option, every document, and every decision before you make it.</p>
+      </div>
+
+      <div class="approach-item">
+        <div class="approach-number">iii.</div>
+        <h3>We de-escalate</h3>
+        <p>Every strategy is designed to reduce stress, not amplify it. We find solutions that work for everyone — especially when children are involved.</p>
+      </div>
+
+      <div class="approach-item">
+        <div class="approach-number">iv.</div>
+        <h3>We stay focused</h3>
+        <p>On what matters most: your family's future. Not winning arguments, not billing hours — helping you move forward.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing" data-od-id="closing">
+    <div class="page">
+      <h2 class="t-display">Ready to talk?</h2>
+      <p class="t-lead">Schedule a confidential consultation to discuss your situation.</p>
+      <a href="contact.html" class="btn">Schedule a conversation</a>
+    </div>
+  </section>
+
+  <footer class="footer" role="contentinfo">
+    <div class="page">
+      <p>&copy; 2024 Halden & Voss Family Law. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    navToggle.addEventListener('click', () => {
+      const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !isExpanded);
+      navLinks.classList.toggle('active');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navToggle.setAttribute('aria-expanded', 'false');
+        navLinks.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>

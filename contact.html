@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Halden & Voss Family Law</title>
+  <meta name="description" content="Schedule a confidential consultation with Halden & Voss Family Law in Denver, CO.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #faf8f5;
+      --surface: #ffffff;
+      --text: #3d3833;
+      --text-light: #6b6560;
+      --muted: #9c958e;
+      --border: #ebe7e2;
+      --accent: #b8856c;
+      --font-display: 'Fraunces', Georgia, serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 18px; }
+    body { font-family: var(--font-body); font-weight: 400; line-height: 1.75; color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; }
+
+    .t-display { font-family: var(--font-display); font-weight: 300; font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; letter-spacing: -0.03em; }
+    .t-lead { font-size: 1.15rem; line-height: 1.8; color: var(--text-light); font-weight: 300; }
+    .t-label { font-family: var(--font-body); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+
+    .page { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+    .spacer-sm { height: 80px; }
+    .spacer-md { height: 140px; }
+
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250, 248, 245, 0.85); backdrop-filter: blur(20px); }
+    .nav-inner { max-width: 720px; margin: 0 auto; padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: var(--font-display); font-size: 1rem; font-weight: 400; color: var(--text); }
+    .nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
+    .nav-links a { font-size: 0.8rem; font-weight: 400; color: var(--muted); text-decoration: none; transition: color 0.3s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta { color: var(--accent) !important; font-weight: 500; }
+    .nav-mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+    .nav-mobile-toggle span { display: block; width: 18px; height: 1px; background: var(--text); margin: 5px 0; }
+
+    .opening { padding-top: 160px; padding-bottom: 80px; }
+    .opening .t-label { display: block; margin-bottom: 40px; }
+    .opening h1 { margin-bottom: 32px; }
+    .opening p { max-width: 520px; }
+
+    .contact-section { border-top: 1px solid var(--border); padding-top: 120px; padding-bottom: 120px; }
+    .form-group { margin-bottom: 32px; }
+    .form-label { display: block; font-size: 0.8rem; font-weight: 500; margin-bottom: 10px; color: var(--text); letter-spacing: 0.02em; }
+    .form-input, .form-textarea, .form-select {
+      width: 100%; padding: 14px 0; font-family: var(--font-body); font-size: 0.95rem;
+      border: none; border-bottom: 1px solid var(--border); background: transparent;
+      color: var(--text); transition: border-color 0.3s; font-weight: 400;
+    }
+    .form-input:focus, .form-textarea:focus, .form-select:focus {
+      outline: none; border-color: var(--accent);
+    }
+    .form-input::placeholder, .form-textarea::placeholder { color: var(--muted); font-weight: 300; }
+    .form-textarea { min-height: 120px; resize: vertical; line-height: 1.75; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .form-error { color: #b8564c; font-size: 0.8rem; margin-top: 8px; display: none; font-weight: 400; }
+    .form-group.error .form-input, .form-group.error .form-textarea { border-color: #b8564c; }
+    .form-group.error .form-error { display: block; }
+    .form-success { color: #5a8a6a; padding: 24px 0; border-bottom: 1px solid var(--border); margin-bottom: 32px; display: none; font-weight: 300; }
+    .form-success.show { display: block; }
+
+    .btn { display: inline-block; font-family: var(--font-body); font-size: 0.85rem; font-weight: 500; color: var(--accent); text-decoration: none; padding: 16px 0; border-bottom: 1px solid var(--accent); transition: all 0.3s; letter-spacing: 0.02em; background: none; cursor: pointer; }
+    .btn:hover { color: var(--text); border-color: var(--text); }
+
+    .info { border-top: 1px solid var(--border); padding-top: 80px; }
+    .info .t-label { display: block; margin-bottom: 48px; }
+    .info-item { padding: 32px 0; border-bottom: 1px solid var(--border); }
+    .info-item:first-of-type { border-top: 1px solid var(--border); }
+    .info-item .t-label { display: block; margin-bottom: 12px; }
+    .info-item p, .info-item a { font-size: 1rem; font-weight: 400; color: var(--text); text-decoration: none; }
+    .info-item a:hover { color: var(--accent); }
+    .info-hours { list-style: none; }
+    .info-hours li { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border); font-size: 0.95rem; font-weight: 300; }
+    .info-hours li:last-child { border-bottom: none; }
+    .info-hours .day { color: var(--muted); }
+
+    .footer { padding: 80px 0; text-align: center; border-top: 1px solid var(--border); }
+    .footer p { font-size: 0.75rem; color: var(--muted); font-weight: 300; }
+
+    @media (max-width: 768px) {
+      html { font-size: 17px; }
+      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(250, 248, 245, 0.98); backdrop-filter: blur(20px); flex-direction: column; padding: 32px 24px; gap: 24px; border-bottom: 1px solid var(--border); }
+      .nav-links.active { display: flex; }
+      .nav-mobile-toggle { display: block; }
+      .form-row { grid-template-columns: 1fr; gap: 32px; }
+      .spacer-sm { height: 60px; }
+      .spacer-md { height: 100px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Halden & Voss</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html" class="nav-cta">Get in touch</a></li>
+      </ul>
+      <button class="nav-mobile-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="opening" data-od-id="opening">
+    <div class="page">
+      <span class="t-label">Contact</span>
+      <h1 class="t-display">Let's talk.</h1>
+      <p class="t-lead">Every conversation starts with understanding. Tell us about your situation, and we'll help you find the best path forward.</p>
+    </div>
+  </section>
+
+  <section class="contact-section" data-od-id="contact">
+    <div class="page">
+      <div class="form-success" id="form-success">
+        Thank you. Your message has been sent. We'll be in touch soon.
+      </div>
+      <form id="contact-form" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="firstName">First name</label>
+            <input type="text" id="firstName" name="firstName" class="form-input" placeholder="Your first name" required>
+            <div class="form-error">Please enter your first name</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="lastName">Last name</label>
+            <input type="text" id="lastName" name="lastName" class="form-input" placeholder="Your last name" required>
+            <div class="form-error">Please enter your last name</div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="email">Email</label>
+            <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" required>
+            <div class="form-error">Please enter a valid email</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" class="form-input" placeholder="(720) 555-0000">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="service">What do you need help with?</label>
+          <select id="service" name="service" class="form-select" required>
+            <option value="">Select a practice area</option>
+            <option value="divorce">Divorce & Separation</option>
+            <option value="custody">Child Custody</option>
+            <option value="estate">Estate Planning</option>
+            <option value="mediation">Mediation</option>
+            <option value="other">Other</option>
+          </select>
+          <div class="form-error">Please select a service</div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="message">Tell us about your situation</label>
+          <textarea id="message" name="message" class="form-textarea" placeholder="What's going on? What do you need help with?" required></textarea>
+          <div class="form-error">Please enter your message</div>
+        </div>
+        <button type="submit" class="btn">Send message</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="info" data-od-id="info">
+    <div class="page">
+      <span class="t-label">Get in touch</span>
+
+      <div class="info-item">
+        <span class="t-label">Phone</span>
+        <a href="tel:+17205550193">(720) 555-0193</a>
+      </div>
+
+      <div class="info-item">
+        <span class="t-label">Email</span>
+        <a href="mailto:contact@haldenvosslaw.com">contact@haldenvosslaw.com</a>
+      </div>
+
+      <div class="info-item">
+        <span class="t-label">Office</span>
+        <p>1550 Larimer St, Suite 220<br>Denver, CO 80202</p>
+      </div>
+
+      <div class="info-item">
+        <span class="t-label">Hours</span>
+        <ul class="info-hours">
+          <li><span class="day">Monday – Friday</span><span>9:00 AM – 5:00 PM</span></li>
+          <li><span class="day">Saturday</span><span>By appointment</span></li>
+          <li><span class="day">Sunday</span><span>Closed</span></li>
+        </ul>
+      </div>
+
+      <div class="info-item">
+        <span class="t-label">Note</span>
+        <p>For urgent matters outside office hours, please call us directly. We understand that family law emergencies don't wait.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" role="contentinfo">
+    <div class="page">
+      <p>&copy; 2024 Halden & Voss Family Law. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    navToggle.addEventListener('click', () => {
+      const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !isExpanded);
+      navLinks.classList.toggle('active');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navToggle.setAttribute('aria-expanded', 'false');
+        navLinks.classList.remove('active');
+      });
+    });
+
+    const form = document.getElementById('contact-form');
+    const successMessage = document.getElementById('form-success');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let isValid = true;
+      form.querySelectorAll('.form-group').forEach(group => group.classList.remove('error'));
+      form.querySelectorAll('[required]').forEach(field => {
+        if (!field.value.trim()) { field.closest('.form-group').classList.add('error'); isValid = false; }
+      });
+      const emailField = document.getElementById('email');
+      if (emailField.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value)) {
+        emailField.closest('.form-group').classList.add('error'); isValid = false;
+      }
+      if (isValid) { form.style.display = 'none'; successMessage.classList.add('show'); }
+    });
+    form.querySelectorAll('input, textarea, select').forEach(field => {
+      field.addEventListener('input', () => field.closest('.form-group').classList.remove('error'));
+    });
+  </script>
+</body>
+</html>

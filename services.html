@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Halden & Voss Family Law</title>
+  <meta name="description" content="Divorce, child custody, estate planning, and mediation services in Denver, CO.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #faf8f5;
+      --surface: #ffffff;
+      --text: #3d3833;
+      --text-light: #6b6560;
+      --muted: #9c958e;
+      --border: #ebe7e2;
+      --accent: #b8856c;
+      --font-display: 'Fraunces', Georgia, serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 18px; }
+    body { font-family: var(--font-body); font-weight: 400; line-height: 1.75; color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; }
+
+    .t-display { font-family: var(--font-display); font-weight: 300; font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; letter-spacing: -0.03em; }
+    .t-lead { font-size: 1.15rem; line-height: 1.8; color: var(--text-light); font-weight: 300; }
+    .t-label { font-family: var(--font-body); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+
+    .page { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+    .spacer-sm { height: 80px; }
+    .spacer-md { height: 140px; }
+    .spacer-lg { height: 200px; }
+
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250, 248, 245, 0.85); backdrop-filter: blur(20px); }
+    .nav-inner { max-width: 720px; margin: 0 auto; padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: var(--font-display); font-size: 1rem; font-weight: 400; color: var(--text); }
+    .nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
+    .nav-links a { font-size: 0.8rem; font-weight: 400; color: var(--muted); text-decoration: none; transition: color 0.3s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta { color: var(--accent) !important; font-weight: 500; }
+    .nav-mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+    .nav-mobile-toggle span { display: block; width: 18px; height: 1px; background: var(--text); margin: 5px 0; }
+
+    .opening { padding-top: 160px; padding-bottom: 80px; }
+    .opening .t-label { display: block; margin-bottom: 40px; }
+    .opening h1 { margin-bottom: 32px; }
+    .opening p { max-width: 520px; }
+
+    .service-detail { border-top: 1px solid var(--border); padding: 120px 0; }
+    .service-detail .t-label { display: block; margin-bottom: 32px; }
+    .service-detail h2 { font-family: var(--font-display); font-weight: 300; font-size: clamp(1.75rem, 4vw, 2.75rem); line-height: 1.2; letter-spacing: -0.025em; margin-bottom: 24px; }
+    .service-detail > .page > p { color: var(--text-light); font-weight: 300; max-width: 520px; margin-bottom: 32px; }
+    .service-detail ul { list-style: none; }
+    .service-detail li { padding: 12px 0; color: var(--text-light); font-weight: 300; font-size: 0.95rem; border-bottom: 1px solid var(--border); }
+    .service-detail li:last-child { border-bottom: none; }
+    .service-detail li::before { content: '— '; color: var(--accent); }
+
+    .process { border-top: 1px solid var(--border); padding-top: 120px; padding-bottom: 120px; }
+    .process .t-label { display: block; margin-bottom: 64px; }
+    .process-step { padding: 48px 0; border-bottom: 1px solid var(--border); }
+    .process-step:first-of-type { border-top: 1px solid var(--border); }
+    .process-number { font-family: var(--font-display); font-size: 0.85rem; color: var(--accent); margin-bottom: 16px; font-style: italic; }
+    .process-step h3 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.25rem, 2.5vw, 1.75rem); margin-bottom: 12px; letter-spacing: -0.02em; }
+    .process-step p { color: var(--text-light); font-weight: 300; font-size: 0.95rem; max-width: 480px; }
+
+    .closing { text-align: center; padding-top: 120px; padding-bottom: 160px; }
+    .closing h2 { font-family: var(--font-display); font-weight: 300; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.2; letter-spacing: -0.025em; margin-bottom: 32px; }
+    .closing p { color: var(--text-light); font-weight: 300; margin: 0 auto 48px; max-width: 440px; }
+    .btn { display: inline-block; font-family: var(--font-body); font-size: 0.85rem; font-weight: 500; color: var(--accent); text-decoration: none; padding: 16px 0; border-bottom: 1px solid var(--accent); transition: all 0.3s; letter-spacing: 0.02em; }
+    .btn:hover { color: var(--text); border-color: var(--text); }
+
+    .footer { padding: 80px 0; text-align: center; border-top: 1px solid var(--border); }
+    .footer p { font-size: 0.75rem; color: var(--muted); font-weight: 300; }
+
+    @media (max-width: 768px) {
+      html { font-size: 17px; }
+      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(250, 248, 245, 0.98); backdrop-filter: blur(20px); flex-direction: column; padding: 32px 24px; gap: 24px; border-bottom: 1px solid var(--border); }
+      .nav-links.active { display: flex; }
+      .nav-mobile-toggle { display: block; }
+      .spacer-sm { height: 60px; }
+      .spacer-md { height: 100px; }
+      .spacer-lg { height: 140px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Halden & Voss</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html" class="nav-cta">Get in touch</a></li>
+      </ul>
+      <button class="nav-mobile-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="opening" data-od-id="opening">
+    <div class="page">
+      <span class="t-label">Services</span>
+      <h1 class="t-display">How we help families.</h1>
+      <p class="t-lead">Thoughtful legal guidance for the moments that matter most. We focus on solutions, not conflict.</p>
+    </div>
+  </section>
+
+  <section class="service-detail" data-od-id="service-divorce">
+    <div class="page">
+      <span class="t-label">01</span>
+      <h2>Divorce & Separation</h2>
+      <p>We guide you through equitable division, spousal support, and all aspects of the divorce process — with an emphasis on reducing conflict and protecting what matters most.</p>
+      <ul>
+        <li>Equitable division of assets and debts</li>
+        <li>Spousal support and maintenance</li>
+        <li>High-asset divorce considerations</li>
+        <li>Business valuation and division</li>
+        <li>Collaborative divorce options</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="service-detail" data-od-id="service-custody">
+    <div class="page">
+      <span class="t-label">02</span>
+      <h2>Child Custody</h2>
+      <p>When children are involved, their wellbeing is our top priority. We help parents develop custody arrangements that serve everyone's best interests.</p>
+      <ul>
+        <li>Legal and physical custody planning</li>
+        <li>Parenting time schedules</li>
+        <li>Modifications to existing orders</li>
+        <li>Relocation disputes</li>
+        <li>Grandparent visitation rights</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="service-detail" data-od-id="service-estate">
+    <div class="page">
+      <span class="t-label">03</span>
+      <h2>Estate Planning</h2>
+      <p>Protecting your family's future starts with thoughtful planning. We help you create comprehensive plans that safeguard your assets and honor your wishes.</p>
+      <ul>
+        <li>Last will and testament drafting</li>
+        <li>Revocable and irrevocable trusts</li>
+        <li>Powers of attorney</li>
+        <li>Healthcare directives</li>
+        <li>Probate administration</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="service-detail" data-od-id="service-mediation">
+    <div class="page">
+      <span class="t-label">04</span>
+      <h2>Mediation</h2>
+      <p>A collaborative, confidential process that helps families reach agreements without the cost and stress of court. We facilitate conversations, not arguments.</p>
+      <ul>
+        <li>Divorce mediation</li>
+        <li>Custody and parenting plan mediation</li>
+        <li>Property division mediation</li>
+        <li>Post-decree modifications</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="process" data-od-id="process">
+    <div class="page">
+      <span class="t-label">How we work</span>
+
+      <div class="process-step">
+        <div class="process-number">Step 01</div>
+        <h3>Conversation</h3>
+        <p>We listen. Understanding your situation, concerns, and goals is the foundation of everything we do.</p>
+      </div>
+
+      <div class="process-step">
+        <div class="process-number">Step 02</div>
+        <h3>Strategy</h3>
+        <p>We develop a customized approach aligned with your goals and your family's needs.</p>
+      </div>
+
+      <div class="process-step">
+        <div class="process-number">Step 03</div>
+        <h3>Resolution</h3>
+        <p>We work diligently to achieve the best outcome — through negotiation, mediation, or litigation when necessary.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing" data-od-id="closing">
+    <div class="page">
+      <h2 class="t-display">Let's discuss your situation.</h2>
+      <p class="t-lead">Every family is different. Schedule a confidential consultation to talk about yours.</p>
+      <a href="contact.html" class="btn">Schedule a conversation</a>
+    </div>
+  </section>
+
+  <footer class="footer" role="contentinfo">
+    <div class="page">
+      <p>&copy; 2024 Halden & Voss Family Law. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    navToggle.addEventListener('click', () => {
+      const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !isExpanded);
+      navLinks.classList.toggle('active');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navToggle.setAttribute('aria-expanded', 'false');
+        navLinks.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>

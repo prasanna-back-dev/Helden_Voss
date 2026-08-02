@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Halden & Voss Family Law | Denver Family Law Attorneys</title>
+  <meta name="description" content="Boutique family law firm in Denver, CO. Divorce, custody, and estate planning with a client-first, low-conflict approach.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Halden & Voss Family Law | Denver Family Law Attorneys">
+  <meta property="og:description" content="Boutique family law firm in Denver, CO. Divorce, custody, and estate planning with a client-first, low-conflict approach.">
+  <meta property="og:image" content="https://haldenvosslaw.com/assets/og-image.png">
+  <meta property="og:url" content="https://haldenvosslaw.com">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #faf8f5;
+      --surface: #ffffff;
+      --text: #3d3833;
+      --text-light: #6b6560;
+      --muted: #9c958e;
+      --border: #ebe7e2;
+      --accent: #b8856c;
+      --accent-muted: rgba(184, 133, 108, 0.12);
+      --font-display: 'Fraunces', Georgia, serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 18px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-weight: 400;
+      line-height: 1.75;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ==============================
+       Typography — the hero here
+       ============================== */
+    .t-display {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: var(--text);
+    }
+
+    .t-display em {
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .t-lead {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: var(--text-light);
+      font-weight: 300;
+    }
+
+    .t-label {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .t-quote {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-style: italic;
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      line-height: 1.5;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+
+    /* ==============================
+       Layout — breathing space
+       ============================== */
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .spacer-sm { height: 80px; }
+    .spacer-md { height: 140px; }
+    .spacer-lg { height: 200px; }
+    .spacer-xl { height: 280px; }
+
+    section {
+      padding: 0;
+    }
+
+    /* ==============================
+       Navigation — quiet
+       ============================== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(250, 248, 245, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .nav-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-cta {
+      font-size: 0.8rem;
+      color: var(--accent) !important;
+      font-weight: 500;
+    }
+
+    .nav-mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .nav-mobile-toggle span {
+      display: block;
+      width: 18px;
+      height: 1px;
+      background: var(--text);
+      margin: 5px 0;
+      transition: 0.3s;
+    }
+
+    /* ==============================
+       Opening — the first breath
+       ============================== */
+    .opening {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 100px;
+    }
+
+    .opening-content {
+      width: 100%;
+    }
+
+    .opening .t-label {
+      display: block;
+      margin-bottom: 40px;
+    }
+
+    .opening h1 {
+      margin-bottom: 48px;
+    }
+
+    .opening p {
+      max-width: 520px;
+    }
+
+    /* ==============================
+       Whisper — a quiet statement
+       ============================== */
+    .whisper {
+      text-align: center;
+      padding: 0 24px;
+    }
+
+    .whisper .t-quote {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .whisper .attribution {
+      margin-top: 32px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    /* ==============================
+       Principle — one at a time
+       ============================== */
+    .principle {
+      border-top: 1px solid var(--border);
+      padding-top: 80px;
+    }
+
+    .principle-number {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--accent);
+      margin-bottom: 32px;
+      font-style: italic;
+    }
+
+    .principle h2 {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      line-height: 1.2;
+      letter-spacing: -0.025em;
+      margin-bottom: 24px;
+      color: var(--text);
+    }
+
+    .principle p {
+      color: var(--text-light);
+      font-weight: 300;
+      max-width: 520px;
+    }
+
+    /* ==============================
+       Services — whispered list
+       ============================== */
+    .services {
+      border-top: 1px solid var(--border);
+      padding-top: 100px;
+    }
+
+    .services .t-label {
+      display: block;
+      margin-bottom: 64px;
+    }
+
+    .service-item {
+      padding: 48px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .service-item:first-of-type {
+      border-top: 1px solid var(--border);
+    }
+
+    .service-item h3 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+
+    .service-item p {
+      color: var(--text-light);
+      font-weight: 300;
+      font-size: 0.95rem;
+      max-width: 480px;
+    }
+
+    /* ==============================
+       Testimonial — single voice
+       ============================== */
+    .testimonial {
+      border-top: 1px solid var(--border);
+      padding-top: 120px;
+      padding-bottom: 120px;
+      text-align: center;
+    }
+
+    .testimonial .t-quote {
+      max-width: 580px;
+      margin: 0 auto;
+    }
+
+    .testimonial .attribution {
+      margin-top: 48px;
+    }
+
+    .testimonial .attribution .name {
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    .testimonial .attribution .role {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    /* ==============================
+       Closing — gentle invitation
+       ============================== */
+    .closing {
+      text-align: center;
+      padding-top: 120px;
+      padding-bottom: 160px;
+    }
+
+    .closing h2 {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+      letter-spacing: -0.025em;
+      margin-bottom: 32px;
+      color: var(--text);
+    }
+
+    .closing p {
+      color: var(--text-light);
+      font-weight: 300;
+      margin: 0 auto 48px;
+      max-width: 440px;
+    }
+
+    .closing-contact {
+      margin-top: 80px;
+      padding-top: 64px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: center;
+      gap: 64px;
+      flex-wrap: wrap;
+    }
+
+    .closing-item .t-label {
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .closing-item a,
+    .closing-item span {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .closing-item a:hover {
+      color: var(--accent);
+    }
+
+    /* ==============================
+       Footer — whisper
+       ============================== */
+    .footer {
+      padding: 80px 0;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer p {
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-weight: 300;
+    }
+
+    /* ==============================
+       Button — minimal
+       ============================== */
+    .btn {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--accent);
+      transition: all 0.3s ease;
+      letter-spacing: 0.02em;
+    }
+
+    .btn:hover {
+      color: var(--text);
+      border-color: var(--text);
+    }
+
+    /* ==============================
+       Responsive
+       ============================== */
+    @media (max-width: 768px) {
+      html { font-size: 17px; }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(250, 248, 245, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: 32px 24px;
+        gap: 24px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-links.active { display: flex; }
+      .nav-mobile-toggle { display: block; }
+
+      .opening { min-height: auto; padding-top: 140px; padding-bottom: 80px; }
+
+      .spacer-sm { height: 60px; }
+      .spacer-md { height: 100px; }
+      .spacer-lg { height: 140px; }
+      .spacer-xl { height: 200px; }
+
+      .closing-contact { gap: 40px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Halden & Voss</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html" class="nav-cta">Get in touch</a></li>
+      </ul>
+      <button class="nav-mobile-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Opening — the first breath -->
+  <section class="opening" data-od-id="opening">
+    <div class="page">
+      <div class="opening-content">
+        <span class="t-label">Denver Family Law</span>
+        <h1 class="t-display">You don't have to go through this alone.</h1>
+        <p class="t-lead">We help families navigate divorce, custody, and estate planning with patience, clarity, and care. No conflict. No confusion. Just guidance.</p>
+        <div class="spacer-sm"></div>
+        <a href="contact.html" class="btn">Schedule a conversation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Whisper — a quiet statement -->
+  <section class="whisper" data-od-id="whisper">
+    <div class="page">
+      <div class="spacer-lg"></div>
+      <p class="t-quote">The goal isn't to win. It's to find a way forward that lets everyone — especially children — begin to heal.</p>
+      <p class="attribution">Priya Halden, Founder</p>
+      <div class="spacer-lg"></div>
+    </div>
+  </section>
+
+  <!-- Principles — one at a time -->
+  <section data-od-id="principles">
+    <div class="page">
+      <div class="spacer-md"></div>
+
+      <div class="principle">
+        <div class="principle-number">i.</div>
+        <h2>We listen first</h2>
+        <p>Before we talk about strategy, we listen. Understanding your situation, your concerns, and your goals is the foundation of everything we do.</p>
+      </div>
+
+      <div class="spacer-md"></div>
+
+      <div class="principle">
+        <div class="principle-number">ii.</div>
+        <h2>We explain everything</h2>
+        <p>No legal jargon. No surprises. We make sure you understand every option, every document, and every decision before you make it.</p>
+      </div>
+
+      <div class="spacer-md"></div>
+
+      <div class="principle">
+        <div class="principle-number">iii.</div>
+        <h2>We de-escalate</h2>
+        <p>Every strategy is designed to reduce stress, not amplify it. We find solutions that work for everyone — especially when children are involved.</p>
+      </div>
+
+      <div class="spacer-lg"></div>
+    </div>
+  </section>
+
+  <!-- Services — whispered list -->
+  <section class="services" data-od-id="services">
+    <div class="page">
+      <span class="t-label">How we help</span>
+
+      <div class="service-item">
+        <h3>Divorce & Separation</h3>
+        <p>Equitable division, spousal support, and collaborative options that protect your future without destroying your present.</p>
+      </div>
+
+      <div class="service-item">
+        <h3>Child Custody</h3>
+        <p>Parenting plans that serve your children's best interests while preserving your relationship with them.</p>
+      </div>
+
+      <div class="service-item">
+        <h3>Estate Planning</h3>
+        <p>Wills, trusts, and comprehensive plans that protect your family's future and honor your wishes.</p>
+      </div>
+
+      <div class="service-item">
+        <h3>Mediation</h3>
+        <p>A confidential process that helps families reach agreements without the cost and stress of court.</p>
+      </div>
+
+      <div class="spacer-lg"></div>
+    </div>
+  </section>
+
+  <!-- Testimonial — single voice -->
+  <section class="testimonial" data-od-id="testimonial">
+    <div class="page">
+      <p class="t-quote">"Priya didn't just handle my case — she helped me understand what I actually needed. For the first time, I felt like someone was on my side without making things worse."</p>
+      <div class="attribution">
+        <div class="name">Sarah M.</div>
+        <div class="role">Divorce Client</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing — gentle invitation -->
+  <section class="closing" data-od-id="closing">
+    <div class="page">
+      <div class="spacer-md"></div>
+      <h2 class="t-display">Let's talk about what comes next.</h2>
+      <p class="t-lead">Every family's situation is different. Schedule a confidential consultation to discuss yours — no pressure, no judgment.</p>
+      <a href="contact.html" class="btn">Schedule a conversation</a>
+
+      <div class="closing-contact">
+        <div class="closing-item">
+          <span class="t-label">Phone</span>
+          <a href="tel:+17205550193">(720) 555-0193</a>
+        </div>
+        <div class="closing-item">
+          <span class="t-label">Email</span>
+          <a href="mailto:contact@haldenvosslaw.com">contact@haldenvosslaw.com</a>
+        </div>
+        <div class="closing-item">
+          <span class="t-label">Office</span>
+          <span>1550 Larimer St, Suite 220<br>Denver, CO 80202</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" role="contentinfo">
+    <div class="page">
+      <p>&copy; 2024 Halden & Voss Family Law. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    navToggle.addEventListener('click', () => {
+      const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !isExpanded);
+      navLinks.classList.toggle('active');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navToggle.setAttribute('aria-expanded', 'false');
+        navLinks.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>
