@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | Halden & Voss Family Law</title>
+  <meta name="description" content="Privacy Policy for Halden & Voss Family Law. Learn how we collect, use, and protect your personal information.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #faf8f5;
+      --text: #3d3833;
+      --text-light: #6b6560;
+      --muted: #9c958e;
+      --border: #ebe7e2;
+      --accent: #b8856c;
+      --font-display: 'Fraunces', Georgia, serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 18px; }
+    body { font-family: var(--font-body); font-weight: 400; line-height: 1.75; color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; }
+
+    .t-display { font-family: var(--font-display); font-weight: 300; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; letter-spacing: -0.03em; }
+    .t-label { font-family: var(--font-body); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+
+    .page { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+    .spacer-md { height: 80px; }
+
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250, 248, 245, 0.85); backdrop-filter: blur(20px); }
+    .nav-inner { max-width: 720px; margin: 0 auto; padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: var(--font-display); font-size: 1rem; font-weight: 400; color: var(--text); }
+    .nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
+    .nav-links a { font-size: 0.8rem; font-weight: 400; color: var(--muted); text-decoration: none; transition: color 0.3s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta { color: var(--accent) !important; font-weight: 500; }
+    .nav-mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+    .nav-mobile-toggle span { display: block; width: 18px; height: 1px; background: var(--text); margin: 5px 0; }
+
+    .opening { padding-top: 160px; padding-bottom: 40px; }
+    .opening .t-label { display: block; margin-bottom: 24px; }
+
+    .content { padding-top: 40px; padding-bottom: 120px; border-top: 1px solid var(--border); }
+    .content h2 { font-family: var(--font-display); font-weight: 400; font-size: 1.25rem; margin-top: 48px; margin-bottom: 16px; color: var(--text); }
+    .content p { color: var(--text-light); font-weight: 300; margin-bottom: 16px; font-size: 0.95rem; }
+    .content ul { list-style: none; margin-bottom: 16px; }
+    .content li { padding: 8px 0; color: var(--text-light); font-weight: 300; font-size: 0.95rem; border-bottom: 1px solid var(--border); }
+    .content li:last-child { border-bottom: none; }
+
+    .footer { padding: 80px 0; text-align: center; border-top: 1px solid var(--border); }
+    .footer p { font-size: 0.75rem; color: var(--muted); font-weight: 300; }
+
+    @media (max-width: 768px) {
+      html { font-size: 17px; }
+      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(250, 248, 245, 0.98); backdrop-filter: blur(20px); flex-direction: column; padding: 32px 24px; gap: 24px; border-bottom: 1px solid var(--border); }
+      .nav-links.active { display: flex; }
+      .nav-mobile-toggle { display: block; }
+      .spacer-md { height: 60px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Halden & Voss</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html" class="nav-cta">Get in touch</a></li>
+      </ul>
+      <button class="nav-mobile-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="opening" data-od-id="opening">
+    <div class="page">
+      <span class="t-label">Legal</span>
+      <h1 class="t-display">Privacy Policy</h1>
+      <p style="color: var(--muted); font-size: 0.85rem;">Last updated: January 1, 2024</p>
+    </div>
+  </section>
+
+  <section class="content" data-od-id="content">
+    <div class="page">
+      <h2>Information We Collect</h2>
+      <p>When you visit our website or contact us, we may collect personal information such as your name, email address, phone number, and any other information you voluntarily provide through our contact form.</p>
+
+      <h2>How We Use Your Information</h2>
+      <p>We use the information we collect to:</p>
+      <ul>
+        <li>Respond to your inquiries and schedule consultations</li>
+        <li>Provide legal services you request</li>
+        <li>Communicate with you about your case</li>
+        <li>Improve our website and services</li>
+        <li>Comply with legal obligations</li>
+      </ul>
+
+      <h2>Information Sharing</h2>
+      <p>We do not sell, trade, or otherwise transfer your personal information to outside parties. This does not include trusted third parties who assist us in operating our website and servicing you, as long as those parties agree to keep this information confidential.</p>
+
+      <h2>Data Security</h2>
+      <p>We implement appropriate security measures to protect your personal information. However, no method of transmission over the Internet or electronic storage is 100% secure, and we cannot guarantee absolute security.</p>
+
+      <h2>Cookies</h2>
+      <p>Our website may use cookies to enhance your experience. You can choose to have your computer warn you each time a cookie is being sent, or you can choose to turn off all cookies through your browser settings.</p>
+
+      <h2>Third-Party Services</h2>
+      <p>We may use third-party services such as Google Analytics to collect anonymized usage data. These services have their own privacy policies governing the use of your information.</p>
+
+      <h2>Children's Privacy</h2>
+      <p>Our website is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13.</p>
+
+      <h2>Changes to This Policy</h2>
+      <p>We may update this privacy policy from time to time. We will notify you of any changes by posting the new policy on this page with an updated revision date.</p>
+
+      <h2>Contact Us</h2>
+      <p>If you have questions about this privacy policy, please contact us at:</p>
+      <p>
+        Halden & Voss Family Law<br>
+        1550 Larimer St, Suite 220<br>
+        Denver, CO 80202<br>
+        Phone: (720) 555-0193<br>
+        Email: contact@haldenvosslaw.com
+      </p>
+    </div>
+  </section>
+
+  <footer class="footer" role="contentinfo">
+    <div class="page">
+      <p>&copy; 2024 Halden & Voss Family Law. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    navToggle.addEventListener('click', () => {
+      const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !isExpanded);
+      navLinks.classList.toggle('active');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navToggle.setAttribute('aria-expanded', 'false');
+        navLinks.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>
